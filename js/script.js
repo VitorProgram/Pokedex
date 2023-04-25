@@ -73,3 +73,6 @@ buttonNext.addEventListener('click', () => { // Quando clicado, adicionar +1
     searchPokemon += 1
     renderPokemon(searchPokemon)
 })
+
+// Renderizando a resposta
+renderPokemon(searchPokemon)
