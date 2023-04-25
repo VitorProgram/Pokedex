@@ -55,3 +55,21 @@ const renderPokemon = async (pokemon) => {
         pokemonNumber.innerHTML = ''
     }
 }
+
+// Funções dos botões
+
+form.addEventListener('submit', (event) => {
+    event.preventDefault()
+    renderPokemon(input.value.toLowerCase()); // Retorna uma nova string com todas as letras convertidas em minúsculas.
+})
+
+buttonPrev.addEventListener('click', () => { // Quando clicado, se o valor do pokemon for maior que 1, voltar
+    if (searchPokemon > 1) {
+        searchPokemon -= 1
+        renderPokemon(searchPokemon)
+    }
+})
+buttonNext.addEventListener('click', () => { // Quando clicado, adicionar +1
+    searchPokemon += 1
+    renderPokemon(searchPokemon)
+})
