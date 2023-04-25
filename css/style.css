@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxanium', cursive, Arial, Helvetica, sans-serif;
+}
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background: linear-gradient(to bottom, #6ab7f5, #fff);
+    background-color: #444;
+    
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.logo-pokedex {
+    max-width: 20%;
+    padding: 10px;
+}
