@@ -20,3 +20,38 @@ const fetchPokemon = async (pokemon) => {
         return data;
     }
 }
+
+// Função de renderização das informações do pokemon pesquisado
+const renderPokemon = async (pokemon) => {
+
+    pokemonName.innerHTML = 'Loading...'
+    pokemonNumber.innerHTML = ''
+
+    const data = await fetchPokemon(pokemon)
+
+		// Se a requisição acontecer, faça
+    if (data) {
+        pokemonName.innerHTML = data.name
+        pokemonNumber.innerHTML = data.id
+    
+        // Selecionando o git do pokemon
+        pokemonImage.src = data['sprites']['versions']['generation-v']['black-white']
+        ['animated']['front_default']
+    
+        // Retirando o valor do input
+        input.value = '';
+
+        // Renderizando a imagem
+        pokemonImage.style.display = 'block'
+
+        // Selecionando o ID do pokemon
+        searchPokemon = data.id
+    } 
+
+		// Se a requisição der erro, faça
+    else {
+        pokemonImage.style.display = 'none'
+        pokemonName.innerHTML = 'Not Found :('
+        pokemonNumber.innerHTML = ''
+    }
+}
